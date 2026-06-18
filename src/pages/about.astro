@@ -1,6 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+// Base-aware asset paths (root + GitHub Pages sub-path).
+const rawBase = import.meta.env.BASE_URL;
+const base = rawBase.endsWith('/') ? rawBase : `${rawBase}/`;
+const asset = (p: string) => `${base}${p}`.replace(/\/{2,}/g, '/');
+
 const principles = [
   { title: 'Governed, not promotional', body: 'We operate under defined structures rather than chase attention. Substance precedes presentation.' },
   { title: 'Long-term oriented', body: 'Capital is committed with a long horizon. We measure continuity in decades, not quarters.' },
@@ -22,6 +27,18 @@ const principles = [
         continuity and disciplined allocation.
       </p>
     </div>
+  </section>
+
+  <!-- Brand mark -->
+  <section class="section--paper-pure mark-section">
+    <figure class="mark">
+      <img
+        src={asset('infinity-symbol.png')}
+        alt="The Infinita infinity mark in gold and black."
+        width="1536"
+        height="1024"
+      />
+    </figure>
   </section>
 
   <!-- Purpose -->
@@ -97,6 +114,15 @@ const principles = [
 
 <style>
   .page-hero { padding-block: clamp(4.5rem, 11vw, 8rem); }
+
+  /* Brand infinity mark, on its light backdrop */
+  .mark-section { padding-block: 0; }
+  .mark {
+    margin: 0;
+    max-width: 60rem;
+    margin-inline: auto;
+  }
+  .mark img { width: 100%; height: auto; }
 
   .story {
     display: grid;
