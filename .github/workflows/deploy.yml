@@ -7,6 +7,7 @@ on:
     branches:
       - claude/practical-newton-pz3kvg
       - claude/confident-tesla-ivc225
+      - claude/exciting-shannon-uivis0
   workflow_dispatch:
 
 # Permissions required for the deploy-pages action.
