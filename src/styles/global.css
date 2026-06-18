@@ -10,9 +10,9 @@
   /* Palette — fully dark: near-black + dark brown, with goldenrod accents. */
   --ink: #100f0d;          /* page background, near-black with a brown undertone */
   --ink-2: #15120f;        /* footer / slightly raised dark surface */
-  --surface: #1c1712;      /* dark-brown alternating section surface */
+  --surface: #2a1c12;      /* dark-brown alternating section surface */
   --paper: #f1ede7;        /* warm off-white — used as foreground on dark */
-  --paper-pure: #1c1712;   /* alias kept for existing rules → dark brown */
+  --paper-pure: #2a1c12;   /* alias kept for existing rules → dark brown */
   --gold: #daa520;         /* goldenrod accent */
   --gold-dark: #b28109;    /* deeper gold */
   --gold-deep: #996f08;
