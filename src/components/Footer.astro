@@ -6,7 +6,7 @@ const year = new Date().getFullYear();
   <div class="container site-footer__inner">
     <div class="site-footer__brand">
       <span class="brand">Infinita</span>
-      <p class="site-footer__tagline">Stewarding capital across generations.</p>
+      <p class="site-footer__tagline">Sovereign · Disciplined · Enduring</p>
     </div>
 
     <nav class="site-footer__nav" aria-label="Footer">
@@ -16,10 +16,11 @@ const year = new Date().getFullYear();
     </nav>
 
     <div class="site-footer__meta">
-      <p>&copy; {year} Infinita. All rights reserved.</p>
+      <p>&copy; {year} Infinita — a privately held capital platform.</p>
       <p class="site-footer__disclaimer">
-        This website is for informational purposes only and does not constitute
-        investment, legal, or tax advice.
+        Infinita is not a fund nor a financial product company. This website is
+        for informational purposes only and does not constitute an offer,
+        solicitation, or investment advice.
       </p>
     </div>
   </div>
@@ -28,7 +29,7 @@ const year = new Date().getFullYear();
 <style>
   .site-footer {
     background: var(--ink);
-    color: #c4cbd3;
+    color: var(--muted-dark);
     padding-block: clamp(3rem, 6vw, 4.5rem);
     font-size: 0.95rem;
   }
@@ -40,17 +41,19 @@ const year = new Date().getFullYear();
   }
   .brand {
     font-family: var(--font-serif);
-    font-size: 1.5rem;
-    letter-spacing: 0.08em;
+    font-size: 1.4rem;
+    letter-spacing: 0.12em;
     color: var(--paper);
     text-transform: uppercase;
   }
   .site-footer__tagline {
-    margin: 0.5rem 0 0;
-    color: #9aa6b2;
-    font-style: italic;
-    font-family: var(--font-serif);
-    font-size: 1.1rem;
+    margin: 0.75rem 0 0;
+    color: var(--gold);
+    font-family: var(--font-sans);
+    text-transform: uppercase;
+    letter-spacing: 0.24em;
+    font-size: 0.72rem;
+    font-weight: 400;
   }
   .site-footer__nav {
     display: flex;
@@ -58,18 +61,18 @@ const year = new Date().getFullYear();
     gap: 0.6rem;
   }
   .site-footer__nav a {
-    color: #c4cbd3;
+    color: var(--muted-dark);
     text-transform: uppercase;
     letter-spacing: 0.14em;
     font-size: 0.78rem;
-    font-weight: 600;
+    font-weight: 500;
   }
-  .site-footer__nav a:hover { color: var(--bronze); }
+  .site-footer__nav a:hover { color: var(--gold); }
   .site-footer__meta {
     grid-column: 1 / -1;
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    border-top: 1px solid var(--line-dark);
     padding-top: 1.75rem;
-    color: #8b97a3;
+    color: #8b8b8b;
     font-size: 0.82rem;
   }
   .site-footer__meta p { margin: 0 0 0.4rem; }
