@@ -1,5 +1,8 @@
 ---
 const year = new Date().getFullYear();
+const rawBase = import.meta.env.BASE_URL;
+const base = rawBase.endsWith('/') ? rawBase : `${rawBase}/`;
+const withBase = (p: string) => `${base}${p}`.replace(/\/{2,}/g, '/');
 ---
 
 <footer class="site-footer">
@@ -10,9 +13,9 @@ const year = new Date().getFullYear();
     </div>
 
     <nav class="site-footer__nav" aria-label="Footer">
-      <a href="/">Home</a>
-      <a href="/about">About</a>
-      <a href="/contact">Contact</a>
+      <a href={withBase('')}>Home</a>
+      <a href={withBase('about')}>About</a>
+      <a href={withBase('contact')}>Contact</a>
     </nav>
 
     <div class="site-footer__meta">

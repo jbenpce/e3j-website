@@ -1,18 +1,24 @@
 ---
-const path = Astro.url.pathname;
-const isActive = (href: string) =>
-  href === '/' ? path === '/' : path.startsWith(href);
+// Base-aware paths so links work both at the root (infinita.one) and under
+// the GitHub Pages sub-path (/Infinita-website/). BASE_URL has a trailing slash.
+const rawBase = import.meta.env.BASE_URL;
+const base = rawBase.endsWith('/') ? rawBase : `${rawBase}/`;
+const withBase = (p: string) => `${base}${p}`.replace(/\/{2,}/g, '/');
+const norm = (p: string) => p.replace(/\/+$/, '') || '/';
+
+const path = norm(Astro.url.pathname);
+const isActive = (href: string) => norm(href) === path;
 
 const links = [
-  { href: '/', label: 'Home' },
-  { href: '/about', label: 'About' },
-  { href: '/contact', label: 'Contact' },
+  { href: withBase(''), label: 'Home' },
+  { href: withBase('about'), label: 'About' },
+  { href: withBase('contact'), label: 'Contact' },
 ];
 ---
 
 <header class="site-header">
   <div class="container site-header__inner">
-    <a href="/" class="brand" aria-label="Infinita — home">Infinita</a>
+    <a href={withBase('')} class="brand" aria-label="Infinita — home">Infinita</a>
 
     <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true" />
     <label for="nav-toggle" class="nav-burger" aria-label="Toggle navigation">
