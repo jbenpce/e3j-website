@@ -44,7 +44,7 @@ const links = [
     position: sticky;
     top: 0;
     z-index: 50;
-    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    background: color-mix(in srgb, var(--ink) 82%, transparent);
     backdrop-filter: blur(8px);
     border-bottom: 1px solid var(--line);
   }
@@ -58,10 +58,10 @@ const links = [
     font-family: var(--font-serif);
     font-size: 1.5rem;
     letter-spacing: 0.12em;
-    color: var(--ink);
+    color: var(--paper);
     text-transform: uppercase;
   }
-  .brand:hover { color: var(--gold-dark); }
+  .brand:hover { color: var(--gold); }
 
   .site-nav {
     display: flex;
@@ -77,9 +77,9 @@ const links = [
     padding-block: 0.25rem;
     border-bottom: 1px solid transparent;
   }
-  .site-nav__link:hover { color: var(--ink); }
+  .site-nav__link:hover { color: var(--paper); }
   .site-nav__link.is-active {
-    color: var(--ink);
+    color: var(--paper);
     border-bottom-color: var(--gold);
   }
 
@@ -98,7 +98,7 @@ const links = [
     .nav-burger span {
       height: 2px;
       width: 100%;
-      background: var(--ink);
+      background: var(--paper);
       transition: transform 0.25s ease, opacity 0.25s ease;
     }
     .site-nav {
@@ -108,7 +108,7 @@ const links = [
       right: 0;
       flex-direction: column;
       gap: 0;
-      background: var(--paper);
+      background: var(--ink-2);
       border-bottom: 1px solid var(--line);
       max-height: 0;
       overflow: hidden;
