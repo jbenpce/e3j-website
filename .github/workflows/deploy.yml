@@ -1,7 +1,8 @@
 name: Deploy to GitHub Pages
 
-# Builds the Astro site and publishes it to GitHub Pages so the work can be
-# previewed at https://jbenpce.github.io/Infinita-website
+# Builds the Astro site and publishes it to GitHub Pages, served at the
+# custom domain https://infinita.one (see public/CNAME). The build runs in
+# production mode (root base) — not the github.io sub-path preview.
 on:
   push:
     branches:
@@ -31,8 +32,6 @@ jobs:
         uses: withastro/action@v3
         with:
           node-version: 22
-        env:
-          GITHUB_PAGES: 'true'
 
   deploy:
     needs: build
