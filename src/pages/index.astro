@@ -1,6 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+// Base-aware asset paths so images resolve at the root (infinita.one) and under
+// the GitHub Pages sub-path (/Infinita-website/).
+const rawBase = import.meta.env.BASE_URL;
+const base = rawBase.endsWith('/') ? rawBase : `${rawBase}/`;
+const asset = (p: string) => `${base}${p}`.replace(/\/{2,}/g, '/');
+
 // Governance structure — ownership, oversight, execution held separately.
 const governance = [
   {
@@ -31,7 +37,14 @@ const approach = [
   <section class="hero section--dark">
     <div class="container hero__inner">
       <h1 class="hero__wordmark">Infinita</h1>
-      <p class="tagline">Sovereign &middot; Disciplined &middot; Enduring</p>
+      <img
+        class="hero__mark"
+        src={asset('logo.jpg')}
+        alt="Infinita — Sovereign · Disciplined · Enduring"
+        width="1536"
+        height="1024"
+        fetchpriority="high"
+      />
       <p class="lede hero__lede">
         A privately held capital platform governed for long-term continuity
         and disciplined allocation.
@@ -97,13 +110,21 @@ const approach = [
 </Layout>
 
 <style>
-  .hero { padding-block: clamp(6rem, 16vw, 12rem); }
+  .hero { padding-block: clamp(4rem, 11vw, 8rem); }
   .hero__wordmark {
     font-size: clamp(3rem, 11vw, 7rem);
     letter-spacing: 0.04em;
-    margin: 0 0 1.25rem;
+    margin: 0 0 1.5rem;
   }
-  .hero__lede { margin-top: 2.5rem; }
+  /* Brand infinity mark — its near-black backdrop blends into the dark hero. */
+  .hero__mark {
+    width: 100%;
+    max-width: 40rem;
+    height: auto;
+    margin: 0 0 0.5rem;
+    border-radius: 4px;
+  }
+  .hero__lede { margin-top: 1.5rem; }
 
   /* Purpose */
   .purpose {
