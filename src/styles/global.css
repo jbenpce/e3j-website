@@ -7,18 +7,19 @@
 --------------------------------------------------------------------------- */
 
 :root {
-  /* Palette */
-  --ink: #161616;          /* near-black, primary text & dark sections */
-  --ink-2: #1b1b1b;        /* slightly raised dark surface */
-  --paper: #f7f7f7;        /* warm off-white background */
-  --paper-pure: #ffffff;
+  /* Palette — fully dark: near-black + dark brown, with goldenrod accents. */
+  --ink: #100f0d;          /* page background, near-black with a brown undertone */
+  --ink-2: #15120f;        /* footer / slightly raised dark surface */
+  --surface: #1c1712;      /* dark-brown alternating section surface */
+  --paper: #f1ede7;        /* warm off-white — used as foreground on dark */
+  --paper-pure: #1c1712;   /* alias kept for existing rules → dark brown */
   --gold: #daa520;         /* goldenrod accent */
-  --gold-dark: #b28109;    /* deeper gold for links/hover */
+  --gold-dark: #b28109;    /* deeper gold */
   --gold-deep: #996f08;
-  --line: #e3e3e3;         /* hairline borders on paper */
+  --line: rgba(255, 255, 255, 0.10);   /* subtle hairline on dark */
   --line-dark: rgba(255, 255, 255, 0.12);
-  --muted: #737373;        /* secondary text on light */
-  --muted-dark: #a4a4a4;   /* secondary text on dark */
+  --muted: #9a948b;        /* secondary text */
+  --muted-dark: #8a847c;   /* dimmer secondary text */
 
   /* Type */
   --font-serif: "Libre Baskerville", Georgia, "Times New Roman", serif;
@@ -44,8 +45,8 @@ body {
   margin: 0;
   font-family: var(--font-sans);
   font-weight: 300;
-  color: var(--ink);
-  background: var(--paper);
+  color: var(--paper);
+  background: var(--ink);
   line-height: 1.7;
   font-size: 1.0625rem;
   -webkit-font-smoothing: antialiased;
@@ -67,11 +68,11 @@ h3 { font-size: clamp(1.15rem, 2.2vw, 1.4rem); }
 p { margin: 0 0 1.1em; }
 
 a {
-  color: var(--gold-dark);
+  color: var(--gold);
   text-decoration: none;
   transition: color 0.2s ease;
 }
-a:hover { color: var(--ink); }
+a:hover { color: var(--paper); }
 
 img { max-width: 100%; height: auto; display: block; }
 
@@ -98,7 +99,7 @@ img { max-width: 100%; height: auto; display: block; }
 .lede {
   font-size: clamp(1.1rem, 2vw, 1.35rem);
   font-weight: 300;
-  color: var(--ink);
+  color: #e9e6e0;
   max-width: 46ch;
   line-height: 1.6;
 }
@@ -123,13 +124,13 @@ img { max-width: 100%; height: auto; display: block; }
   letter-spacing: 0.16em;
   text-transform: uppercase;
   padding: 0.95rem 2.1rem;
-  border: 1px solid var(--ink);
-  color: var(--ink);
+  border: 1px solid var(--gold);
+  color: var(--paper);
   background: transparent;
   cursor: pointer;
   transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
-.btn:hover { background: var(--ink); color: var(--paper); }
+.btn:hover { background: var(--gold); color: var(--ink); }
 
 .btn--light {
   border-color: var(--gold);
