@@ -112,16 +112,17 @@ const approach = [
 </Layout>
 
 <style>
-  .hero { padding-block: clamp(3rem, 9vw, 7rem); }
+  .hero { padding-block: clamp(2rem, 6vw, 4rem); }
   .hero__inner { text-align: center; }
 
-  /* Logo lockup — the white wordmark sits over the infinity mark, matching
-     the original opening page. The image's near-black backdrop blends into
-     the dark hero, and the % offset tracks the artwork across screen sizes. */
+  /* Logo lockup — the white wordmark is centred over the infinity mark,
+     matching the original opening page. The image's near-black backdrop
+     blends into the dark hero, and the % offset tracks the artwork across
+     screen sizes. */
   .hero__lockup {
     position: relative;
     width: 100%;
-    max-width: 44rem;
+    max-width: 56rem;
     margin-inline: auto;
   }
   .hero__mark {
@@ -132,17 +133,18 @@ const approach = [
   }
   .hero__wordmark {
     position: absolute;
-    top: 13%;
-    left: 0;
-    right: 0;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     margin: 0;
     color: #fff;
-    font-size: clamp(2rem, 8vw, 4.75rem);
-    letter-spacing: 0.06em;
+    font-size: clamp(2.2rem, 7.5vw, 5.25rem);
+    letter-spacing: 0.04em;
     line-height: 1;
-    text-shadow: 0 2px 28px rgba(0, 0, 0, 0.55);
+    white-space: nowrap;
+    text-shadow: 0 2px 30px rgba(0, 0, 0, 0.5);
   }
-  .hero__lede { margin: 2rem auto 0; }
+  .hero__lede { margin: clamp(1.5rem, 4vw, 2.5rem) auto 0; }
 
   /* Purpose */
   .purpose {
