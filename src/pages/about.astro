@@ -1,0 +1,148 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// NOTE: Placeholder team — replace with real names, roles, and bios.
+const team = [
+  {
+    name: 'Founder & Principal',
+    role: 'Investment & Strategy',
+    bio: 'Sets the long-term vision and oversees capital allocation across the portfolio.',
+  },
+  {
+    name: 'Managing Director',
+    role: 'Operations & Family Services',
+    bio: 'Coordinates day-to-day affairs, reporting, and relationships with external advisors.',
+  },
+  {
+    name: 'Advisor',
+    role: 'Legal & Estate',
+    bio: 'Guides governance, succession, and the structures that safeguard the family’s legacy.',
+  },
+];
+
+const values = [
+  { title: 'Discretion', body: 'Privacy is the default. We operate quietly and protect what is entrusted to us.' },
+  { title: 'Patience', body: 'We measure success in decades, not quarters, and invest accordingly.' },
+  { title: 'Alignment', body: 'Our interests are tied to the families we serve. We win only when they do.' },
+  { title: 'Integrity', body: 'Candid counsel, transparent reporting, and decisions we can stand behind.' },
+];
+---
+
+<Layout
+  title="About — Infinita"
+  description="Who we are: the philosophy, people, and principles behind Infinita's family office."
+>
+  <section class="page-hero section--dark">
+    <div class="container">
+      <p class="eyebrow">About Infinita</p>
+      <h1>A steward, not a salesman.</h1>
+      <p class="lede">
+        Infinita was built to serve families who think in generations. Our role is
+        to safeguard what has been earned and to grow it with care.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container story">
+      <div>
+        <p class="eyebrow">Our story</p>
+        <h2>Why we exist</h2>
+      </div>
+      <div class="story__body">
+        <p>
+          <em>[Placeholder — share the founding story here.]</em> Infinita was
+          established to bring institutional discipline and a family’s sensibility
+          under one roof. We saw too many families served by parties whose
+          incentives ran against their own.
+        </p>
+        <p>
+          Today we manage capital, coordinate advisors, and steward the structures
+          that allow wealth — and the values behind it — to endure.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--paper-pure">
+    <div class="container">
+      <p class="eyebrow">What guides us</p>
+      <h2>Our principles</h2>
+      <div class="values">
+        {values.map((v) => (
+          <article class="value">
+            <h3>{v.title}</h3>
+            <p>{v.body}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">The team</p>
+      <h2>People behind Infinita</h2>
+      <div class="team">
+        {team.map((m) => (
+          <article class="member">
+            <div class="member__photo" aria-hidden="true"></div>
+            <h3>{m.name}</h3>
+            <p class="member__role">{m.role}</p>
+            <p class="member__bio">{m.bio}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-hero { padding-block: clamp(4.5rem, 11vw, 8rem); }
+
+  .story {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 3rem;
+    align-items: start;
+  }
+  .story__body p:last-child { margin-bottom: 0; }
+
+  .values {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+  .value { border-top: 2px solid var(--bronze); padding-top: 1.25rem; }
+  .value h3 { margin-bottom: 0.4rem; }
+  .value p { color: var(--muted); margin: 0; }
+
+  .team {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+  .member__photo {
+    aspect-ratio: 4 / 5;
+    background: linear-gradient(160deg, #e7e0d3, #d8cdb8);
+    margin-bottom: 1.25rem;
+  }
+  .member h3 { margin-bottom: 0.2rem; }
+  .member__role {
+    color: var(--bronze-dark);
+    font-weight: 600;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .member__bio { color: var(--muted); margin: 0; }
+
+  @media (max-width: 820px) {
+    .story { grid-template-columns: 1fr; gap: 1.5rem; }
+    .values { grid-template-columns: 1fr; gap: 2rem; }
+    .team { grid-template-columns: 1fr; gap: 2.5rem; }
+  }
+</style>

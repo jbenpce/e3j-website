@@ -1,0 +1,81 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <div class="site-footer__brand">
+      <span class="brand">Infinita</span>
+      <p class="site-footer__tagline">Stewarding capital across generations.</p>
+    </div>
+
+    <nav class="site-footer__nav" aria-label="Footer">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+    </nav>
+
+    <div class="site-footer__meta">
+      <p>&copy; {year} Infinita. All rights reserved.</p>
+      <p class="site-footer__disclaimer">
+        This website is for informational purposes only and does not constitute
+        investment, legal, or tax advice.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--ink);
+    color: #c4cbd3;
+    padding-block: clamp(3rem, 6vw, 4.5rem);
+    font-size: 0.95rem;
+  }
+  .site-footer__inner {
+    display: grid;
+    gap: 2.5rem;
+    grid-template-columns: 1.5fr 1fr;
+    align-items: start;
+  }
+  .brand {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    letter-spacing: 0.08em;
+    color: var(--paper);
+    text-transform: uppercase;
+  }
+  .site-footer__tagline {
+    margin: 0.5rem 0 0;
+    color: #9aa6b2;
+    font-style: italic;
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+  }
+  .site-footer__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .site-footer__nav a {
+    color: #c4cbd3;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 0.78rem;
+    font-weight: 600;
+  }
+  .site-footer__nav a:hover { color: var(--bronze); }
+  .site-footer__meta {
+    grid-column: 1 / -1;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding-top: 1.75rem;
+    color: #8b97a3;
+    font-size: 0.82rem;
+  }
+  .site-footer__meta p { margin: 0 0 0.4rem; }
+  .site-footer__disclaimer { max-width: 60ch; }
+
+  @media (max-width: 560px) {
+    .site-footer__inner { grid-template-columns: 1fr; }
+  }
+</style>

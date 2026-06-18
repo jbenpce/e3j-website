@@ -1,0 +1,149 @@
+/* ---------------------------------------------------------------------------
+   Infinita — Design tokens & base styles
+   Restrained, classic palette: ink navy, warm paper, muted bronze accent.
+--------------------------------------------------------------------------- */
+
+:root {
+  /* Palette */
+  --ink: #14202e;          /* deep navy near-black, primary text & dark sections */
+  --ink-soft: #2c3b4d;
+  --paper: #f7f4ee;        /* warm off-white background */
+  --paper-pure: #ffffff;
+  --bronze: #a9854f;       /* muted gold/bronze accent */
+  --bronze-dark: #8a6c3d;
+  --line: #e3ddd1;         /* hairline borders on paper */
+  --muted: #5d6b7a;        /* secondary text */
+
+  /* Type */
+  --font-serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+
+  /* Spacing rhythm */
+  --space-section: clamp(4rem, 9vw, 8rem);
+  --container: 72rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.65;
+  font-size: 1.0625rem;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: 0.01em;
+  margin: 0 0 0.5em;
+}
+
+h1 { font-size: clamp(2.5rem, 6vw, 4.25rem); }
+h2 { font-size: clamp(1.9rem, 4vw, 2.9rem); }
+h3 { font-size: clamp(1.3rem, 2.4vw, 1.6rem); }
+
+p { margin: 0 0 1.1em; }
+
+a {
+  color: var(--bronze-dark);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+a:hover { color: var(--ink); }
+
+img { max-width: 100%; height: auto; display: block; }
+
+/* Layout helpers */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 5vw, 3rem);
+}
+
+.section { padding-block: var(--space-section); }
+
+.eyebrow {
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--bronze-dark);
+  margin: 0 0 1rem;
+}
+
+.lede {
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  color: var(--ink-soft);
+  max-width: 42ch;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.95rem 2rem;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.btn:hover { background: var(--ink); color: var(--paper); }
+
+.btn--light {
+  border-color: var(--paper);
+  color: var(--paper);
+}
+.btn--light:hover { background: var(--paper); color: var(--ink); }
+
+/* Dark section */
+.section--dark {
+  background: var(--ink);
+  color: var(--paper);
+}
+.section--dark h1,
+.section--dark h2,
+.section--dark h3 { color: var(--paper); }
+.section--dark .lede { color: #cfd6de; }
+
+/* Decorative hairline rule */
+.rule {
+  width: 3rem;
+  height: 2px;
+  background: var(--bronze);
+  border: 0;
+  margin: 0 0 1.75rem;
+}
+
+/* Accessible focus */
+:focus-visible {
+  outline: 2px solid var(--bronze);
+  outline-offset: 3px;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
