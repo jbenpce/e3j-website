@@ -36,15 +36,17 @@ const approach = [
   <!-- Hero -->
   <section class="hero section--dark">
     <div class="container hero__inner">
-      <h1 class="hero__wordmark">Infinita</h1>
-      <img
-        class="hero__mark"
-        src={asset('logo.jpg')}
-        alt="Infinita — Sovereign · Disciplined · Enduring"
-        width="1536"
-        height="1024"
-        fetchpriority="high"
-      />
+      <div class="hero__lockup">
+        <img
+          class="hero__mark"
+          src={asset('logo.jpg')}
+          alt="Infinita — Sovereign · Disciplined · Enduring"
+          width="1536"
+          height="1024"
+          fetchpriority="high"
+        />
+        <h1 class="hero__wordmark">Infinita</h1>
+      </div>
       <p class="lede hero__lede">
         A privately held capital platform governed for long-term continuity
         and disciplined allocation.
@@ -110,21 +112,37 @@ const approach = [
 </Layout>
 
 <style>
-  .hero { padding-block: clamp(4rem, 11vw, 8rem); }
-  .hero__wordmark {
-    font-size: clamp(3rem, 11vw, 7rem);
-    letter-spacing: 0.04em;
-    margin: 0 0 1.5rem;
+  .hero { padding-block: clamp(3rem, 9vw, 7rem); }
+  .hero__inner { text-align: center; }
+
+  /* Logo lockup — the white wordmark sits over the infinity mark, matching
+     the original opening page. The image's near-black backdrop blends into
+     the dark hero, and the % offset tracks the artwork across screen sizes. */
+  .hero__lockup {
+    position: relative;
+    width: 100%;
+    max-width: 44rem;
+    margin-inline: auto;
   }
-  /* Brand infinity mark — its near-black backdrop blends into the dark hero. */
   .hero__mark {
     width: 100%;
-    max-width: 40rem;
     height: auto;
-    margin: 0 0 0.5rem;
+    display: block;
     border-radius: 4px;
   }
-  .hero__lede { margin-top: 1.5rem; }
+  .hero__wordmark {
+    position: absolute;
+    top: 13%;
+    left: 0;
+    right: 0;
+    margin: 0;
+    color: #fff;
+    font-size: clamp(2rem, 8vw, 4.75rem);
+    letter-spacing: 0.06em;
+    line-height: 1;
+    text-shadow: 0 2px 28px rgba(0, 0, 0, 0.55);
+  }
+  .hero__lede { margin: 2rem auto 0; }
 
   /* Purpose */
   .purpose {
