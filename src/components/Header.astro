@@ -1,6 +1,6 @@
 ---
-// Base-aware paths so links work both at the root (infinita.one) and under
-// the GitHub Pages sub-path (/Infinita-website/). BASE_URL has a trailing slash.
+// Base-aware paths so links work both at the root (e3j.xyz) and under a
+// GitHub Pages sub-path preview. BASE_URL has a trailing slash.
 const rawBase = import.meta.env.BASE_URL;
 const base = rawBase.endsWith('/') ? rawBase : `${rawBase}/`;
 const withBase = (p: string) => `${base}${p}`.replace(/\/{2,}/g, '/');
@@ -18,7 +18,7 @@ const links = [
 
 <header class="site-header">
   <div class="container site-header__inner">
-    <a href={withBase('')} class="brand" aria-label="Infinita — home">Infinita</a>
+    <a href={withBase('')} class="brand" aria-label="E3J — home">E3J</a>
 
     <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true" />
     <label for="nav-toggle" class="nav-burger" aria-label="Toggle navigation">
@@ -35,6 +35,13 @@ const links = [
           {l.label}
         </a>
       ))}
+      <a
+        href="https://infinita.one"
+        class="site-nav__link site-nav__link--external"
+        rel="noopener"
+      >
+        Infinita&nbsp;↗
+      </a>
     </nav>
   </div>
 </header>
@@ -82,6 +89,8 @@ const links = [
     color: var(--paper);
     border-bottom-color: var(--gold);
   }
+  .site-nav__link--external { color: var(--gold-dark); }
+  .site-nav__link--external:hover { color: var(--gold); }
 
   /* Mobile menu (CSS-only) */
   .nav-toggle, .nav-burger { display: none; }
