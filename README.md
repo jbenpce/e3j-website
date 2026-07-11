@@ -4,11 +4,24 @@ A static website for E3J, built with [Astro](https://astro.build/). It mirrors
 the Infinita design system ([infinita.one](https://infinita.one)) — same
 palette, type, and layout — with minimal copy and links back to Infinita.
 
-> **Note:** this site lives on the `claude/e3j-website-rebuild-iemkpu` branch
-> of the Infinita-website repository. Do **not** merge it into `main` (that
-> would replace the infinita.one site). To go live, move this branch into its
-> own repository (e.g. `jbenpce/e3j-website`), enable GitHub Pages there, and
-> point the `e3j.xyz` DNS at it — `public/CNAME` is already set to `e3j.xyz`.
+> **Note:** this site was developed on the `claude/e3j-website-rebuild-iemkpu`
+> branch of the Infinita-website repository. Do **not** merge it into that
+> repo's `main` (that would replace the infinita.one site). Its home is the
+> standalone `jbenpce/e3j-website` repository, deployed to GitHub Pages.
+
+## Go live (GitHub Pages + GoDaddy DNS)
+
+1. Push this code to `main` of `jbenpce/e3j-website` — the deploy workflow
+   (`.github/workflows/deploy.yml`) builds and publishes to GitHub Pages.
+2. In the repo: **Settings → Pages** — set *Source* to **GitHub Actions**, and
+   *Custom domain* to `e3j.xyz` (matches `public/CNAME`). Enable
+   **Enforce HTTPS** once the certificate is issued.
+3. In GoDaddy DNS for `e3j.xyz` (keep the domain at GoDaddy — only DNS
+   records change; any GoDaddy website/forwarding product can be cancelled):
+   - Remove existing `A` records for `@` and any GoDaddy forwarding/parking.
+   - Add `A` records for `@` → `185.199.108.153`, `185.199.109.153`,
+     `185.199.110.153`, `185.199.111.153`.
+   - Add `CNAME` for `www` → `jbenpce.github.io`.
 
 ## Develop
 

@@ -1,14 +1,17 @@
 name: Deploy to GitHub Pages
 
 # Builds the Astro site and publishes it to GitHub Pages, served at the
-# custom domain https://infinita.one (see public/CNAME). The build runs in
+# custom domain https://e3j.xyz (see public/CNAME). The build runs in
 # production mode (root base) — not the github.io sub-path preview.
+#
+# This workflow is written for the standalone e3j-website repository, where
+# the site lives on `main`. It intentionally does NOT fire on any branch of
+# the Infinita-website repository (push triggers only match the branch the
+# workflow file is on, and this file never lives on Infinita's main).
 on:
   push:
     branches:
-      - claude/practical-newton-pz3kvg
-      - claude/confident-tesla-ivc225
-      - claude/exciting-shannon-uivis0
+      - main
   workflow_dispatch:
 
 # Permissions required for the deploy-pages action.
