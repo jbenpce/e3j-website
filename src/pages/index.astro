@@ -1,12 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import BrandMark from '../components/BrandMark.astro';
 ---
 
 <Layout title="E3J">
-  <!-- Hero — text wordmark, phased in like the Infinita opening page -->
+  <!-- Hero — the <E3J> mark, phased in like the Infinita opening page -->
   <section class="hero section--dark">
     <div class="container hero__inner">
-      <h1 class="hero__wordmark">E3J</h1>
+      <h1 class="hero__wordmark"><BrandMark /></h1>
       <hr class="rule hero__rule" />
       <p class="tagline">Private · Patient · Enduring</p>
       <p class="lede hero__lede">
@@ -55,22 +56,11 @@ import Layout from '../layouts/Layout.astro';
 
   .hero__wordmark {
     margin: 0;
-    font-size: clamp(3.5rem, 12vw, 8rem);
-    letter-spacing: 0.18em;
-    line-height: 1.1;
-    /* Deep metallic gold — light catches the top of the letterforms and
-       falls into a darker bronze at the baseline. */
-    background: linear-gradient(
-      175deg,
-      #f2d98a 0%,
-      #daa520 34%,
-      #a87d0d 62%,
-      #7d5c06 100%
-    );
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    filter: drop-shadow(0 3px 22px rgba(218, 165, 32, 0.22));
+    display: flex;
+    justify-content: center;
+    /* Sets the mark's scale — the letters, oversized 3 and brackets all
+       size themselves off this via em units. */
+    font-size: clamp(2.8rem, 10vw, 6.5rem);
     /* Phase in on load, like the Infinita opening page. */
     opacity: 0;
     animation: heroWordmarkIn 2.4s ease-in 0.3s forwards;

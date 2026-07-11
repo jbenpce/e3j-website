@@ -14,6 +14,7 @@
   --paper: #f1ede7;        /* warm off-white — used as foreground on dark */
   --paper-pure: #2a1c12;   /* alias kept for existing rules → dark brown */
   --gold: #daa520;         /* goldenrod accent */
+  --gold-bright: #e8b13c;  /* brand-mark gold — the flat yellow-gold of the logo */
   --gold-dark: #b28109;    /* deeper gold */
   --gold-deep: #996f08;
   --line: rgba(255, 255, 255, 0.10);   /* subtle hairline on dark */
@@ -114,6 +115,30 @@ img { max-width: 100%; height: auto; display: block; }
   color: var(--gold);
   margin: 0;
 }
+
+/* ---------------------------------------------------------------------------
+   The E3J brand mark: <E3J> — flat yellow-gold, heavy geometric sans,
+   oversized central 3, chunky angle brackets. Scales with font-size.
+--------------------------------------------------------------------------- */
+.e3j-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.12em;
+  font-family: var(--font-sans);
+  font-weight: 800;
+  line-height: 1;
+  color: var(--gold-bright);
+  letter-spacing: 0;
+}
+.e3j-mark__letter { font-size: 1em; }
+.e3j-mark__three { font-size: 1.55em; }
+.e3j-mark__chev {
+  width: 0.6em;
+  height: 1.28em;
+  background: currentColor;
+  clip-path: polygon(100% 0, 0 50%, 100% 100%, 100% 70%, 42% 50%, 100% 30%);
+}
+.e3j-mark__chev--right { transform: scaleX(-1); }
 
 /* Buttons */
 .btn {

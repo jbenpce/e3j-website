@@ -1,0 +1,15 @@
+---
+// The E3J mark: <E3J> — chunky angle brackets, oversized central 3.
+// Scales with the parent's font-size; styles live in global.css (.e3j-mark).
+interface Props {
+  class?: string;
+}
+---
+
+<span class:list={['e3j-mark', Astro.props.class]} role="img" aria-label="E3J">
+  <span class="e3j-mark__chev" aria-hidden="true"></span
+  ><span class="e3j-mark__letter">E</span
+  ><span class="e3j-mark__three">3</span
+  ><span class="e3j-mark__letter">J</span
+  ><span class="e3j-mark__chev e3j-mark__chev--right" aria-hidden="true"></span>
+</span>
