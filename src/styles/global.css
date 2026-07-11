@@ -133,8 +133,9 @@ img { max-width: 100%; height: auto; display: block; }
 .e3j-mark__letter { font-size: 1em; }
 .e3j-mark__three { font-size: 1.55em; }
 .e3j-mark__chev {
-  width: 0.6em;
-  height: 1.28em;
+  /* Sized to the cap height of the E and J, not the oversized 3. */
+  width: 0.42em;
+  height: 0.78em;
   background: currentColor;
   clip-path: polygon(100% 0, 0 50%, 100% 100%, 100% 70%, 42% 50%, 100% 30%);
 }
