@@ -2,10 +2,10 @@
   <!-- The E3J mark: <E3J> — flat yellow-gold, heavy sans, oversized 3. -->
   <rect width="64" height="64" rx="10" fill="#131210"/>
   <g fill="#e8b13c">
-    <polygon points="13,25.5 7.5,32 13,38.5 13,35.6 10.5,32 13,28.4"/>
-    <polygon points="51,25.5 56.5,32 51,38.5 51,35.6 53.5,32 51,28.4"/>
-    <text x="21" y="32" text-anchor="middle" dominant-baseline="central" font-family="'Arial Black', Arial, Helvetica, sans-serif" font-weight="900" font-size="17">E</text>
-    <text x="32.5" y="32" text-anchor="middle" dominant-baseline="central" font-family="'Arial Black', Arial, Helvetica, sans-serif" font-weight="900" font-size="27">3</text>
-    <text x="44" y="32" text-anchor="middle" dominant-baseline="central" font-family="'Arial Black', Arial, Helvetica, sans-serif" font-weight="900" font-size="17">J</text>
+    <polygon points="14.5,26 9.5,32 14.5,38 14.5,35.2 12.2,32 14.5,28.8"/>
+    <polygon points="49.5,26 54.5,32 49.5,38 49.5,35.2 51.8,32 49.5,28.8"/>
+    <text x="22.5" y="32" text-anchor="middle" dominant-baseline="central" font-family="'Arial Black', Arial, Helvetica, sans-serif" font-weight="900" font-size="16">E</text>
+    <text x="32" y="32" text-anchor="middle" dominant-baseline="central" font-family="'Arial Black', Arial, Helvetica, sans-serif" font-weight="900" font-size="26">3</text>
+    <text x="41.5" y="32" text-anchor="middle" dominant-baseline="central" font-family="'Arial Black', Arial, Helvetica, sans-serif" font-weight="900" font-size="16">J</text>
   </g>
 </svg>

@@ -123,21 +123,26 @@ img { max-width: 100%; height: auto; display: block; }
 .e3j-mark {
   display: inline-flex;
   align-items: center;
-  gap: 0.12em;
+  gap: 0.045em;
   font-family: var(--font-sans);
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1;
   color: var(--gold-bright);
   letter-spacing: 0;
 }
 .e3j-mark__letter { font-size: 1em; }
-.e3j-mark__three { font-size: 1.55em; }
+.e3j-mark__three {
+  font-size: 1.5em;
+  /* Poppins numerals carry wide side bearings — pull the letters in. */
+  margin-inline: -0.045em;
+}
 .e3j-mark__chev {
-  /* Sized to the cap height of the E and J, not the oversized 3. */
-  width: 0.42em;
-  height: 0.78em;
+  /* Sized to the cap height of the E and J, not the oversized 3;
+     slimmer arms than the letter strokes keep the mark refined. */
+  width: 0.38em;
+  height: 0.74em;
   background: currentColor;
-  clip-path: polygon(100% 0, 0 50%, 100% 100%, 100% 70%, 42% 50%, 100% 30%);
+  clip-path: polygon(100% 0, 0 50%, 100% 100%, 100% 73%, 46% 50%, 100% 27%);
 }
 .e3j-mark__chev--right { transform: scaleX(-1); }
 
