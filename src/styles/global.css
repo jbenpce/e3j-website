@@ -123,26 +123,27 @@ img { max-width: 100%; height: auto; display: block; }
 .e3j-mark {
   display: inline-flex;
   align-items: center;
-  gap: 0.045em;
-  font-family: var(--font-sans);
-  font-weight: 700;
+  gap: 0.02em;
+  font-family: "Montserrat", var(--font-sans);
+  font-weight: 600;
   line-height: 1;
-  color: var(--gold-bright);
+  /* The deep gold of the tagline — richer than the flat logo yellow. */
+  color: var(--gold-dark);
   letter-spacing: 0;
 }
 .e3j-mark__letter { font-size: 1em; }
 .e3j-mark__three {
   font-size: 1.5em;
-  /* Poppins numerals carry wide side bearings — pull the letters in. */
-  margin-inline: -0.045em;
+  /* Numerals carry wide side bearings — pull the letters in. */
+  margin-inline: -0.07em;
 }
 .e3j-mark__chev {
   /* Sized to the cap height of the E and J, not the oversized 3;
      slimmer arms than the letter strokes keep the mark refined. */
-  width: 0.38em;
-  height: 0.74em;
+  width: 0.34em;
+  height: 0.72em;
   background: currentColor;
-  clip-path: polygon(100% 0, 0 50%, 100% 100%, 100% 73%, 46% 50%, 100% 27%);
+  clip-path: polygon(100% 0, 0 50%, 100% 100%, 100% 76%, 50% 50%, 100% 24%);
 }
 .e3j-mark__chev--right { transform: scaleX(-1); }
 
