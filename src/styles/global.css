@@ -121,28 +121,34 @@ img { max-width: 100%; height: auto; display: block; }
    oversized central 3, chunky angle brackets. Scales with font-size.
 --------------------------------------------------------------------------- */
 .e3j-mark {
+  --gold-foil: linear-gradient(180deg, #eecb6b 0%, #d4a437 48%, #a17a1c 100%);
   display: inline-flex;
   align-items: center;
   gap: 0.02em;
-  font-family: "Montserrat", var(--font-sans);
-  font-weight: 600;
+  font-family: "Cinzel", var(--font-serif);
+  font-weight: 700;
   line-height: 1;
-  /* The deep gold of the tagline — richer than the flat logo yellow. */
-  color: var(--gold-dark);
   letter-spacing: 0;
+}
+.e3j-mark__letter,
+.e3j-mark__three {
+  background: var(--gold-foil);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 .e3j-mark__letter { font-size: 1em; }
 .e3j-mark__three {
   font-size: 1.5em;
   /* Numerals carry wide side bearings — pull the letters in. */
-  margin-inline: -0.07em;
+  margin-inline: -0.06em;
 }
 .e3j-mark__chev {
   /* Sized to the cap height of the E and J, not the oversized 3;
      slimmer arms than the letter strokes keep the mark refined. */
   width: 0.34em;
   height: 0.72em;
-  background: currentColor;
+  background: var(--gold-foil);
   clip-path: polygon(100% 0, 0 50%, 100% 100%, 100% 76%, 50% 50%, 100% 24%);
 }
 .e3j-mark__chev--right { transform: scaleX(-1); }
